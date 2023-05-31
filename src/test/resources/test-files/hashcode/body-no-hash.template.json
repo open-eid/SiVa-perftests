@@ -1,0 +1,10 @@
+{
+  "signatureFiles": [
+    {
+      "signature": "{{FILE1_BASE64}}"
+    },
+    {
+      "signature": "{{FILE2_BASE64}}"
+    }
+  ]
+}

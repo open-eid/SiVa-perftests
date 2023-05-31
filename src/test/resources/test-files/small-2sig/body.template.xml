@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.webapp.siva.openeid.ee/">
+	<soapenv:Header/>
+     <soapenv:Body>
+     	<soap:ValidateDocument>
+          	<soap:ValidationRequest>
+               	<Document>{{FILE_BASE64}}</Document>
+                <Filename>{{FILE_NAME}}</Filename>
+          	</soap:ValidationRequest>
+     	</soap:ValidateDocument>
+	</soapenv:Body>
+</soapenv:Envelope>

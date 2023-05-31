@@ -1,0 +1,24 @@
+{
+  "signatureFiles": [
+    {
+      "signature": "{{FILE1_BASE64}}",
+      "datafiles": [
+        {
+          "filename": "atarktikaleping.pdf",
+          "hashAlgo": "SHA256",
+          "hash": "fKA52HwTv2cGatHEcKcI4ZpVCLL175L96Rubp4s+Gx0="
+        }
+      ]
+    },
+    {
+      "signature": "{{FILE2_BASE64}}",
+      "datafiles": [
+        {
+          "filename": "atarktikaleping.pdf",
+          "hashAlgo": "SHA256",
+          "hash": "fKA52HwTv2cGatHEcKcI4ZpVCLL175L96Rubp4s+Gx0="
+        }
+      ]
+    }
+  ]
+}
