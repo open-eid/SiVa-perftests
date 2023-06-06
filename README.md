@@ -18,24 +18,37 @@ The load tests can be run using the following command:
 | Parameter | Mandatory | Description | Example |
 | --------- | --------- | ----------- | ------- |
 | `baseUrl` | YES | SiVa base URL | `https://localhost:8080` |
-| `simulationClass` | YES | Fully qualified class name of a simulation. | `ee.ria.siva.perftest.simulations.HashcodeSimulation` |
+| `simulationClass` | YES | Fully qualified class name of a simulation. | `ee.ria.siva.perftest.small.SmallAsiceSimulation` |
 
 Available simulations are as follows:
 
-| Class name                                             | Description |
-| ------------------------------------------------------ | ----------- |
-| `ee.ria.siva.perftest.simulations.HashcodeSimulation`  | Contains 2 scenarios for POST /validateHashcode, one with the hashcode and one without |
-| `ee.ria.siva.perftest.simulations.MediumSimulation`    | Contains 5 scenarios for POST /validate, each with either a medium sized `.asice`, `.asics`, `.bdoc`, `.ddoc` or `.pdf` payload |
-| `ee.ria.siva.perftest.simulations.SmallSimulation`     | Contains 5 scenarios for POST /validate, each with either a small sized `.asice`, `.asics`, `.bdoc`, `.ddoc` or `.pdf` payload |
-| `ee.ria.siva.perftest.simulations.SoapSmallSimulation` | Contains 5 scenarios for POST /soap/validationWebService, each with either a small sized `.asice`, `.asics`, `.bdoc`, `.ddoc` or `.pdf` payload |
+| Class name                                                    | Description                                                               |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ee.ria.siva.perftest.hashcode.HashcodeWithHashSimulation`    | Scenario for POST /validateHashcode with hashcode                         |
+| `ee.ria.siva.perftest.hashcode.HashcodeWithoutHashSimulation` | Scenario for POST /validateHashcode without hashcode                      |
+| `ee.ria.siva.perftest.medium.MediumAsiceSimulation`           | Scenario for POST /validate with medium sized `.asice`                    |
+| `ee.ria.siva.perftest.medium.MediumAsicsSimulation`           | Scenario for POST /validate with medium sized `.asics`                    |
+| `ee.ria.siva.perftest.medium.MediumBdocSimulation`            | Scenario for POST /validate with medium sized `.bdoc`                     |
+| `ee.ria.siva.perftest.medium.MediumDdocSimulation`            | Scenario for POST /validate with medium sized `.ddoc`                     |
+| `ee.ria.siva.perftest.medium.MediumPdfSimulation`             | Scenario for POST /validate with medium sized `.pdf`                      |
+| `ee.ria.siva.perftest.small.SmallAsiceSimulation`             | Scenario for POST /validate with small sized `.asice`                     |
+| `ee.ria.siva.perftest.small.SmallAsicsSimulation`             | Scenario for POST /validate with small sized `.asics`                     |
+| `ee.ria.siva.perftest.small.SmallBdocSimulation`              | Scenario for POST /validate with small sized `.bdoc`                      |
+| `ee.ria.siva.perftest.small.SmallDdocSimulation`              | Scenario for POST /validate with small sized `.ddoc`                      |
+| `ee.ria.siva.perftest.small.SmallPdfSimulation`               | Scenario for POST /validate with small sized `.pdf`                       |
+| `ee.ria.siva.perftest.soap.SoapSmallAsiceSimulation`          | Scenario for POST /soap/validationWebService with small sized `.asice`    |
+| `ee.ria.siva.perftest.soap.SoapSmallAsicsSimulation`          | Scenario for POST /soap/validationWebService with small sized `.asics`    |
+| `ee.ria.siva.perftest.soap.SoapSmallBdocSimulation`           | Scenario for POST /soap/validationWebService with small sized `.bdoc`     |
+| `ee.ria.siva.perftest.soap.SoapSmallDdocSimulation`           | Scenario for POST /soap/validationWebService with small sized `.ddoc`     |
+| `ee.ria.siva.perftest.soap.SoapSmallPdfSimulation`            | Scenario for POST /soap/validationWebService with small sized `.pdf`      |
 
 For example: 
 
 ```Shell
-./run.sh http://localhost:8080 ee.ria.siva.perftest.simulations.HashcodeSimulation
+./run.sh http://localhost:8080 ee.ria.siva.perftest.small.SmallAsiceSimulation
 ```
 
-Load simulation scenarios are run in 6 steps, each step taking `60` seconds and executing a certain amount of RPS (requests per second):
+Simulation scenarios are run in 6 steps, each step taking `60` seconds and executing a certain amount of RPS (requests per second):
 
 | Step # | RPS | Duration |
 | ------ | --- | -------- |
@@ -46,7 +59,7 @@ Load simulation scenarios are run in 6 steps, each step taking `60` seconds and 
 | `5`    | 40  | 60       |
 | `6`    | 50  | 60       |
 
-A total of 9300 requests are made in the span of 6 minutes for each scenario in a simulation.
+A total of 9300 requests are made in the span of 6 minutes for each simulation.
 
 ## Generated reports
 

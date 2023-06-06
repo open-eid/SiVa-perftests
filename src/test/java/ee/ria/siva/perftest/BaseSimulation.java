@@ -4,11 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Base64;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 import io.gatling.javaapi.core.CoreDsl;
 import io.gatling.javaapi.core.OpenInjectionStep;
-import io.gatling.javaapi.core.PopulationBuilder;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpDsl;
@@ -35,15 +33,10 @@ public abstract class BaseSimulation extends Simulation {
                 CoreDsl.constantUsersPerSec(50).during(60)
         };
 
-        PopulationBuilder builder = Stream.of(getScenarioBuilder())
-                .map(scenario -> scenario.injectOpen(rate))
-                .reduce(PopulationBuilder::andThen)
-                .orElseThrow(NullPointerException::new);
-
-        setUp(builder).protocols(httpProtocol);
+        setUp(getScenarioBuilder().injectOpen(rate)).protocols(httpProtocol);
     }
 
-    protected abstract ScenarioBuilder[] getScenarioBuilder();
+    protected abstract ScenarioBuilder getScenarioBuilder();
 
     protected abstract String getTestFilesDirectory();
 
