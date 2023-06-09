@@ -22,25 +22,28 @@ The load tests can be run using the following command:
 
 Available simulations are as follows:
 
-| Class name                                                    | Description                                                               |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `ee.ria.siva.perftest.hashcode.HashcodeWithHashSimulation`    | Scenario for POST /validateHashcode with hashcode                         |
-| `ee.ria.siva.perftest.hashcode.HashcodeWithoutHashSimulation` | Scenario for POST /validateHashcode without hashcode                      |
-| `ee.ria.siva.perftest.medium.MediumAsiceSimulation`           | Scenario for POST /validate with medium sized `.asice`                    |
-| `ee.ria.siva.perftest.medium.MediumAsicsSimulation`           | Scenario for POST /validate with medium sized `.asics`                    |
-| `ee.ria.siva.perftest.medium.MediumBdocSimulation`            | Scenario for POST /validate with medium sized `.bdoc`                     |
-| `ee.ria.siva.perftest.medium.MediumDdocSimulation`            | Scenario for POST /validate with medium sized `.ddoc`                     |
-| `ee.ria.siva.perftest.medium.MediumPdfSimulation`             | Scenario for POST /validate with medium sized `.pdf`                      |
-| `ee.ria.siva.perftest.small.SmallAsiceSimulation`             | Scenario for POST /validate with small sized `.asice`                     |
-| `ee.ria.siva.perftest.small.SmallAsicsSimulation`             | Scenario for POST /validate with small sized `.asics`                     |
-| `ee.ria.siva.perftest.small.SmallBdocSimulation`              | Scenario for POST /validate with small sized `.bdoc`                      |
-| `ee.ria.siva.perftest.small.SmallDdocSimulation`              | Scenario for POST /validate with small sized `.ddoc`                      |
-| `ee.ria.siva.perftest.small.SmallPdfSimulation`               | Scenario for POST /validate with small sized `.pdf`                       |
-| `ee.ria.siva.perftest.soap.SoapSmallAsiceSimulation`          | Scenario for POST /soap/validationWebService with small sized `.asice`    |
-| `ee.ria.siva.perftest.soap.SoapSmallAsicsSimulation`          | Scenario for POST /soap/validationWebService with small sized `.asics`    |
-| `ee.ria.siva.perftest.soap.SoapSmallBdocSimulation`           | Scenario for POST /soap/validationWebService with small sized `.bdoc`     |
-| `ee.ria.siva.perftest.soap.SoapSmallDdocSimulation`           | Scenario for POST /soap/validationWebService with small sized `.ddoc`     |
-| `ee.ria.siva.perftest.soap.SoapSmallPdfSimulation`            | Scenario for POST /soap/validationWebService with small sized `.pdf`      |
+| Class name                                                        | Description                                                               |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ee.ria.siva.perftest.hashcode.HashcodeWithHashSimulation`        | Scenario for POST /validateHashcode with hashcode                         |
+| `ee.ria.siva.perftest.hashcode.HashcodeWithoutHashSimulation`     | Scenario for POST /validateHashcode without hashcode                      |
+| `ee.ria.siva.perftest.medium.MediumAsiceSimulation`               | Scenario for POST /validate with medium sized `.asice`                    |
+| `ee.ria.siva.perftest.medium.MediumAsicsSimulation`               | Scenario for POST /validate with medium sized `.asics`                    |
+| `ee.ria.siva.perftest.medium.MediumBdocSimulation`                | Scenario for POST /validate with medium sized `.bdoc`                     |
+| `ee.ria.siva.perftest.medium.MediumDdocSimulation`                | Scenario for POST /validate with medium sized `.ddoc`                     |
+| `ee.ria.siva.perftest.medium.MediumPdfSimulation`                 | Scenario for POST /validate with medium sized `.pdf`                      |
+| `ee.ria.siva.perftest.small.SmallAsiceSimulation`                 | Scenario for POST /validate with small sized `.asice`                     |
+| `ee.ria.siva.perftest.small.SmallAsicsSimulation`                 | Scenario for POST /validate with small sized `.asics`                     |
+| `ee.ria.siva.perftest.small.SmallBdocSimulation`                  | Scenario for POST /validate with small sized `.bdoc`                      |
+| `ee.ria.siva.perftest.small.SmallDdocSimulation`                  | Scenario for POST /validate with small sized `.ddoc`                      |
+| `ee.ria.siva.perftest.small.SmallPdfSimulation`                   | Scenario for POST /validate with small sized `.pdf`                       |
+| `ee.ria.siva.perftest.soap.SoapSmallAsiceSimulation`              | Scenario for POST /soap/validationWebService with small sized `.asice`    |
+| `ee.ria.siva.perftest.soap.SoapSmallAsicsSimulation`              | Scenario for POST /soap/validationWebService with small sized `.asics`    |
+| `ee.ria.siva.perftest.soap.SoapSmallBdocSimulation`               | Scenario for POST /soap/validationWebService with small sized `.bdoc`     |
+| `ee.ria.siva.perftest.soap.SoapSmallDdocSimulation`               | Scenario for POST /soap/validationWebService with small sized `.ddoc`     |
+| `ee.ria.siva.perftest.soap.SoapSmallPdfSimulation`                | Scenario for POST /soap/validationWebService with small sized `.pdf`      |
+| `ee.ria.siva.perftest.xades.XadesLtTmSimulation`                  | Scenario for POST /validateHashcode with xades TM payload                 |
+| `ee.ria.siva.perftest.xades.XadesLtTsSimulation`                  | Scenario for POST /validateHashcode with xades TS payload                 |
+| `ee.ria.siva.perftest.xades.XadesLtTsMultipleDatafilesSimulation` | Scenario for POST /validateHashcode with xades TS multiple datafiles      |
 
 For example: 
 

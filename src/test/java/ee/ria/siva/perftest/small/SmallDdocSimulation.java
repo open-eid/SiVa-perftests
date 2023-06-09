@@ -23,8 +23,8 @@ public class SmallDdocSimulation extends BaseJsonSimulation {
                         .body(validationRequestFor("DDOC.ddoc"))
                         .asJson()
                         .check(HttpDsl.status().is(200))
-                        .check(SIGNATURE_CHECK)
-                        .check(VALID_SIGNATURE_CHECK));
+                        .check(getTotalSignatureCheck(2))
+                        .check(getValidSignatureCheck(2)));
 
     }
 

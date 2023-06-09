@@ -23,8 +23,8 @@ public class SoapSmallDdocSimulation extends BaseXmlSimulation {
                         .body(compileRequestTemplate("body.template.xml", "DDOC.ddoc"))
                         .asXml()
                         .check(HttpDsl.status().is(200))
-                        .check(SIGNATURE_CHECK)
-                        .check(VALID_SIGNATURE_CHECK));
+                        .check(getTotalSignatureCheck(2))
+                        .check(getValidSignatureCheck(2)));
 
     }
 

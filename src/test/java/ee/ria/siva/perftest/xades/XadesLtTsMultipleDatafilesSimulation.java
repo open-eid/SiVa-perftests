@@ -1,4 +1,4 @@
-package ee.ria.siva.perftest.hashcode;
+package ee.ria.siva.perftest.xades;
 
 import static io.gatling.javaapi.core.CoreDsl.scenario;
 import static io.gatling.javaapi.http.HttpDsl.http;
@@ -7,25 +7,24 @@ import ee.ria.siva.perftest.BaseJsonSimulation;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.http.HttpDsl;
 
-public class HashcodeWithoutHashSimulation extends BaseJsonSimulation {
+public class XadesLtTsMultipleDatafilesSimulation extends BaseJsonSimulation {
 
     @Override
     protected String getTestFilesDirectory() {
-        return "hashcode";
+        return "xades";
     }
 
     @Override
     protected ScenarioBuilder getScenarioBuilder() {
 
-        return scenario("hashcode 2sig without hash")
+        return scenario("xades LT TS multiple datafiles")
                 .exec(http("POST /validateHashcode")
                         .post("/validateHashcode")
-                        .body(compileRequestTemplate("body-no-hash.template.json", "signatures0.xml",
-                                "signatures1.xml"))
+                        .body(compileRequestTemplate("body.template.json", "Valid_XAdES_LT_TS_multiple_datafiles.xml"))
                         .asJson()
                         .check(HttpDsl.status().is(200))
-                        .check(getTotalSignatureCheck(2))
-                        .check(getValidSignatureCheck(2)));
+                        .check(getTotalSignatureCheck(1))
+                        .check(getValidSignatureCheck(0)));
 
     }
 

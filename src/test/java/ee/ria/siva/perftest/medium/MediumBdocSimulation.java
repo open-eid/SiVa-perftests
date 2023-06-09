@@ -23,8 +23,8 @@ public class MediumBdocSimulation extends BaseJsonSimulation {
                         .body(validationRequestFor("BDOC-TM.bdoc"))
                         .asJson()
                         .check(HttpDsl.status().is(200))
-                        .check(SIGNATURE_CHECK)
-                        .check(VALID_SIGNATURE_CHECK));
+                        .check(getTotalSignatureCheck(2))
+                        .check(getValidSignatureCheck(2)));
 
     }
 

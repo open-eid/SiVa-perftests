@@ -2,9 +2,11 @@ package ee.ria.siva.perftest;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Objects;
 
+import io.gatling.javaapi.core.Body.WithString;
 import io.gatling.javaapi.core.CoreDsl;
 import io.gatling.javaapi.core.OpenInjectionStep;
 import io.gatling.javaapi.core.ScenarioBuilder;
@@ -54,6 +56,20 @@ public abstract class BaseSimulation extends Simulation {
 
     protected String readFileFromTestResourcesAndEncodeToBase64String(String fileName) {
         return Base64.getEncoder().encodeToString(readFileFromTestResources(fileName));
+    }
+
+    protected WithString compileRequestTemplate(String templateName, String... inputFileNames) {
+        String templateFile = new String(readFileFromTestResources(templateName), StandardCharsets.UTF_8);
+
+        for (int i = 0; i < inputFileNames.length; i++) {
+            String encodedInputFile = readFileFromTestResourcesAndEncodeToBase64String(inputFileNames[i]);
+            String contentRegex = String.format("\\{\\{FILE%d_BASE64\\}\\}", i + 1);
+            String nameRegex = String.format("\\{\\{FILE%d_NAME\\}\\}", i + 1);
+            templateFile = templateFile.replaceFirst(contentRegex, encodedInputFile)
+                    .replaceFirst(nameRegex, inputFileNames[i]);
+        }
+
+        return CoreDsl.StringBody(templateFile);
     }
 
 }
