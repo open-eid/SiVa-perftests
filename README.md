@@ -1,6 +1,27 @@
 <img src="doc/img/eu_regional_development_fund_horizontal.jpg" width="350" height="200" alt="European Union European Regional Development Fund"></img>
 
 # SiVa Performance Tests
+The goal is to determine how SiVa service handles requests under increasing load over time.
+Gatling is used to implement load tests for REST/SOAP interface.
+
+For each container type there is separate simulation available since the business logic and underlying mechanics for 
+validating specific container types are vastly different. Following test data is used: 
+
+* BDOC-TS file with two valid signatures (~100KB and 5MB)
+* BDOC-TM file with two valid signatures (~100KB and 5MB)
+* PDF file with two valid signatures (~200KB and 5MB)
+* DDOC file with two valid signatures (~300KB and 5MB)
+* ASIC-S file with two valid signatures (~20KB and 50KB)
+
+Each of the files is validated through REST interface. SOAP interface is used with small files for a comparison. 
+It is evaluated that the interface (REST or SOAP) do not play noticeable effect on overall results.
+
+Each of the tested files follow the same test plan:
+
+* Five concurrent requests are made per second
+* This load is held for period of time
+* Concurrent requests are increased by five until 50 concurrent requests per second is achieved
+* Latency and throughput is measured on each concurrent request steps
 
 ## Prerequisites
 
