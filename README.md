@@ -1,4 +1,4 @@
-<img src="doc/img/eu_regional_development_fund_horizontal.jpg" width="350" height="200" alt="European Union European Regional Development Fund"></img>
+<img src="doc/img/Co-funded_by_the_European_Union.jpg" width="350" height="200" alt="Co-funded by the European Union"></img>
 
 # SiVa Performance Tests
 The goal is to determine how SiVa service handles requests under increasing load over time.
