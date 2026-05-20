@@ -2,7 +2,7 @@
 
 # SiVa Performance Tests
 The goal is to determine how SiVa service handles requests under increasing load over time.
-Gatling is used to implement load tests for REST/SOAP interface.
+Gatling is used to implement load tests for REST interface.
 
 For each container type there is separate simulation available since the business logic and underlying mechanics for 
 validating specific container types are vastly different. Following test data is used: 
@@ -12,9 +12,6 @@ validating specific container types are vastly different. Following test data is
 * PDF file with two valid signatures (~200KB and 5MB)
 * DDOC file with two valid signatures (~300KB and 5MB)
 * ASIC-S file with two valid signatures (~20KB and 50KB)
-
-Each of the files is validated through REST interface. SOAP interface is used with small files for a comparison. 
-It is evaluated that the interface (REST or SOAP) do not play noticeable effect on overall results.
 
 Each of the tested files follow the same test plan:
 
@@ -57,11 +54,6 @@ Available simulations are as follows:
 | `ee.ria.siva.perftest.small.SmallBdocSimulation`                  | Scenario for POST /validate with small sized `.bdoc`                      |
 | `ee.ria.siva.perftest.small.SmallDdocSimulation`                  | Scenario for POST /validate with small sized `.ddoc`                      |
 | `ee.ria.siva.perftest.small.SmallPdfSimulation`                   | Scenario for POST /validate with small sized `.pdf`                       |
-| `ee.ria.siva.perftest.soap.SoapSmallAsiceSimulation`              | Scenario for POST /soap/validationWebService with small sized `.asice`    |
-| `ee.ria.siva.perftest.soap.SoapSmallAsicsSimulation`              | Scenario for POST /soap/validationWebService with small sized `.asics`    |
-| `ee.ria.siva.perftest.soap.SoapSmallBdocSimulation`               | Scenario for POST /soap/validationWebService with small sized `.bdoc`     |
-| `ee.ria.siva.perftest.soap.SoapSmallDdocSimulation`               | Scenario for POST /soap/validationWebService with small sized `.ddoc`     |
-| `ee.ria.siva.perftest.soap.SoapSmallPdfSimulation`                | Scenario for POST /soap/validationWebService with small sized `.pdf`      |
 | `ee.ria.siva.perftest.xades.XadesLtTmSimulation`                  | Scenario for POST /validateHashcode with xades TM payload                 |
 | `ee.ria.siva.perftest.xades.XadesLtTsSimulation`                  | Scenario for POST /validateHashcode with xades TS payload                 |
 | `ee.ria.siva.perftest.xades.XadesLtTsMultipleDatafilesSimulation` | Scenario for POST /validateHashcode with xades TS multiple datafiles      |
